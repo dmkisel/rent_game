@@ -9,12 +9,14 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{% url 'games:list' %}">Все игры</a>
         </li>
+        {% if user.is_autenticated %}
         <li class="nav-item">
           <a class="nav-link" href="#">Бронирование</a>
         </li>
          <li class="nav-item">
           <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Акции</a>
         </li>
+        {% endif %}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             О нас
@@ -26,12 +28,14 @@
             <li><a class="dropdown-item" href="#">Обратная связь</a></li>
           </ul>
         </li>
-
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
+        <span class="navbar-text">
+            {% if user.is_autenticated %}
+              {{user.name}}
+            {% else %}
+          <a class="dropdown-item" href="{% url 'users:login' %}">Войти</a>
+            {% endif %}
+        </span>
+      </div>
   </div>
 </nav>

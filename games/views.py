@@ -1,9 +1,11 @@
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin,PermissionRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import (ListView,
                                   DetailView, CreateView, UpdateView, DeleteView)
 from games.models import Game,RentGame
-from games.forms import GameForm,RentForm
+from games.forms import GameForm
+
 
 
 def game_view(request):

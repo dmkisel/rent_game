@@ -20,12 +20,14 @@
                                     <a href="{% url 'games:detail' pk=game.pk %}" class="btn btn-link">
                                         Подробнее
                                     </a>
+                                    {% if user.is_superuser and user.is_autenticated %}
                                     <a href="{% url 'games:update' pk=game.pk %}" class="btn btn-link">
                                         Редактировать
                                     </a>
                                     <a href="{% url 'games:delete' pk=game.pk %}" class="btn btn-link">
                                         Удалить
                                     </a>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>

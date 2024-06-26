@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Register
+    Вход в профиль
 {% endblock %}
 
 
@@ -12,9 +12,10 @@
                 <form class="form" method="post">
                             {% csrf_token %}
                             {{ form.as_p }}
-
-                    <button class="btn btn-primary" type="submit">Зарегестрироваться</button>
+                    <button class="btn btn-primary" type="submit">Войти</button>
                 </form>
+                <!--<a class="dropdown-item" href="{% url 'users:register' %}">Зарегестрироваться</a>
+                <a class="dropdown-item" href="{% url 'users:register' %}">Забыли пароль?</a>-->
             </div>
         </div>
     </div>

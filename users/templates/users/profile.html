@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Register
+    Профиль, {{ form.name }}
 {% endblock %}
 
 
@@ -12,9 +12,8 @@
                 <form class="form" method="post">
                             {% csrf_token %}
                             {{ form.as_p }}
-
-                    <button class="btn btn-primary" type="submit">Зарегестрироваться</button>
                 </form>
+                <a class="dropdown-item" href="{% url 'users:register' %}">Изменить</a>
             </div>
         </div>
     </div>
